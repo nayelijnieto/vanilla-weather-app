@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="src/style.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/a5854fe67e.js" crossorigin="anonymous"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Gloock&family=Lobster&display=swap"
+        rel="stylesheet">
+
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <section class="search-bar">
+        <form class="row g-3">
+            <div class="col-auto">
+                <input type="text" class="form-control" id="search-engine" placeholder="What's the weather in...?"
+                    value="">
+            </div>
+            <div class="col-auto search-button">
+                <button type="button" class="btn btn-secondary" id="search-button">Search Now</button>
+            </div>
+            <div class="col-auto search-button">
+                <button type="current-location-button" class="btn current-location-button"
+                    id="current-location-button">Current
+                    Location</button>
+            </div>
+        </form>
+    </section>
+
+    <section class="block-1">
+
+        <p class="todaysDate"></p>
+        <span class="localTime" id="current-time"></span>
+        <h1>
+            Chicago
+        </h1>
+        <h2>
+            36°
+        </h2>
+        <img src="https://cdn-icons-png.flaticon.com/512/7810/7810138.png" width="90px">
+    </section>
+
+    <section class="block-2">
+        <div class="row row-cols-2">
+            <div class="humidity">Humidity: 0</div>
+            <div class="feels-like">Feels like: 29°</div>
+            <div class="windspeed">Wind: 0 mph</div>
+            <div class="description">Description: Sunny</div>
+        </div>
+    </section>
+
+    <section class="block-3">
+        <div class="container text-center weekdays">
+            <div class="row align-items-center">
+                <div class="col">sat</div>
+                <div class="col">sun</div>
+                <div class="col">mon</div>
+                <div class="col">tue</div>
+                <div class="col">wed</div>
+                <div class="col">thu</div>
+            </div>
+        </div>
+        </div>
+        <div class="container text-center temperatures">
+            <div class="row align-items-center">
+                <div class="col">48°</div>
+                <div class="col">50°</div>
+                <div class="col">50°</div>
+                <div class="col">53°</div>
+                <div class="col">40°</div>
+                <div class="col">41°</div>
+            </div>
+        </div>
+
+        <div class="container text-center forecast-icons">
+            <div class="row align-items-center">
+                <div class="col"><img src="https://cdn-icons-png.flaticon.com/512/3104/3104619.png" width="50px"></div>
+                <div class="col"><img src="https://cdn-icons-png.flaticon.com/512/2242/2242879.png" width="50px"></div>
+                <div class="col"><img src="https://cdn-icons-png.flaticon.com/512/7810/7810138.png" width="50px"></div>
+                <div class="col"><img src="https://cdn-icons-png.flaticon.com/512/2242/2242879.png" width="50px"></div>
+                <div class="col"><img src="https://cdn-icons-png.flaticon.com/512/3104/3104619.png" width="50px"></div>
+                <div class="col"><img src="https://cdn-icons-png.flaticon.com/512/2242/2242879.png" width="50px"></div>
+            </div>
+        </div>
+        </div>
+    </section>
+<footer>
+    <a href="https://github.com/nayelijnieto/simple-weather-app" target="_blank">Open-source code</a><span>by Nayeli Nieto</span>
+</footer>
+
+</body>
+<script src="src/index.js"></script>
+
+</html>
