@@ -64,18 +64,22 @@ function displayWeather(response) {
   let feelsLikeTemp = Math.round(response.data.main.feels_like);
   let windSpeed = Math.round(response.data.wind.speed);
   let h1 = document.querySelector("h1");
-  h1.innerHTML = `${response.data.name}`;
   let h2 = document.querySelector("h2");
-  h2.innerHTML = `${temperature}°F`;
   let humidity = document.querySelector(".humidity");
-  humidity.innerHTML = `Humidity: ${response.data.main.humidity}`;
   let feelsLike = document.querySelector(".feels-like");
-  feelsLike.innerHTML = `Feels like: ${feelsLikeTemp}°`;
   let windspeed = document.querySelector(".windspeed");
-  windspeed.innerHTML = `Wind speed: ${windSpeed} mph`;
   let description = document.querySelector(".description");
-  description.innerHTML = `Description: ${response.data.weather[0].description}`;
   let iconElement = document.querySelector("#icon");
+
+  fahrenheitTemperature = Math.round(response.data.main.temp);
+
+  h1.innerHTML = `${response.data.name}`;
+  h2.innerHTML = `${fahrenheitTemperature}°`;
+  humidity.innerHTML = `Humidity: ${response.data.main.humidity}`;
+  feelsLike.innerHTML = `Feels like: ${feelsLikeTemp}°`;
+  windspeed.innerHTML = `Wind speed: ${windSpeed} mph`;
+  description.innerHTML = `Description: ${response.data.weather[0].description}`;
+
   iconElement.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
@@ -95,3 +99,28 @@ navigator.geolocation.getCurrentPosition(retrieveLocation);
 
 let locationButton = document.querySelector(".current-location-button");
 locationButton.addEventListener("click", retrieveLocation);
+
+//Unit Conversion // fahrenheit & celsius //
+function displayCelsiusTemperature(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("h2");
+
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let celsiusTemperature = ((fahrenheitTemperature - 32) * 5) / 9;
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
+function displayFahrenheitTemperature(event) {
+  event.preventDefault();
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  let temperatureElement = document.querySelector("h2");
+  temperatureElement.innerHTML = `${fahrenheitTemperature}°`;
+}
+let fahrenheitTemperature = null;
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsiusTemperature);
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
