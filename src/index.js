@@ -75,6 +75,12 @@ function displayWeather(response) {
   windspeed.innerHTML = `Wind speed: ${windSpeed} mph`;
   let description = document.querySelector(".description");
   description.innerHTML = `Description: ${response.data.weather[0].description}`;
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", `response.data.weather[0].description`);
 }
 
 function retrieveLocation(position) {

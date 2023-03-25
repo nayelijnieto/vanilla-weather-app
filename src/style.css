@@ -37,7 +37,9 @@ body {
   margin-bottom: 20px;
   padding: 15px;
 }
-
+.description {
+  text-transform: capitalize;
+}
 .weekdays {
   font-size: 28px;
   padding: 10px;
