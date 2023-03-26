@@ -1,9 +1,11 @@
 body {
-  background: url(https://img.freepik.com/free-vector/cloud-background-pastel-paper-cut-style-vector_53876-135914.jpg?w=1380&t=st=1679762590~exp=1679763190~hmac=d7895b4c0ae9a2cd470f593b68a90e70591caa31ce81006b5d4e9ce77a675270)
+  background: url(https://avatars.mds.yandex.net/i?id=d2130824b730a2879b7f0b4a574d9305-5281109-images-thumbs&n=13)
     no-repeat;
   background-size: cover;
 }
-
+h2 {
+  size: 80px;
+}
 .block-1,
 .block-2,
 .block-3 {
@@ -41,7 +43,7 @@ body {
   text-transform: capitalize;
 }
 .weekdays {
-  font-size: 28px;
+  font-size: 34px;
   padding: 10px;
 }
 footer {

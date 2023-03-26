@@ -107,8 +107,8 @@ function displayCelsiusTemperature(event) {
 
   celsiusLink.classList.remove("active");
   fahrenheitLink.classList.add("active");
-  let celsiusTemperature = ((fahrenheitTemperature - 32) * 5) / 9;
-  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+  let celsiusTemperature = Math.round(((fahrenheitTemperature - 32) * 5) / 9);
+  temperatureElement.innerHTML = `${celsiusTemperature}°`;
 }
 function displayFahrenheitTemperature(event) {
   event.preventDefault();
