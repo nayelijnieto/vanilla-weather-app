@@ -95,10 +95,6 @@ function retrieveLocation(position) {
   axios.get(apiUrl).then(displayWeather);
   console.log(apiUrl);
 }
-navigator.geolocation.getCurrentPosition(retrieveLocation);
-
-let locationButton = document.querySelector(".current-location-button");
-locationButton.addEventListener("click", retrieveLocation);
 
 //Unit Conversion // fahrenheit & celsius //
 function displayCelsiusTemperature(event) {
@@ -117,6 +113,32 @@ function displayFahrenheitTemperature(event) {
   let temperatureElement = document.querySelector("h2");
   temperatureElement.innerHTML = `${fahrenheitTemperature}°`;
 }
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  forecastHTML =
+    forecastHTML +
+    `
+        <div class="col-2">
+            <div class="forecast-date">THU</div>
+            <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/rain-day.png" width="50px"/>
+            <div class="forecast-temperatures">
+                <span class="temperature-maximums">18°</span>
+                <span class="temperature-minimums">12°</span>
+                
+            </div>
+        </div>
+`;
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
+navigator.geolocation.getCurrentPosition(retrieveLocation);
+
+let locationButton = document.querySelector(".current-location-button");
+locationButton.addEventListener("click", retrieveLocation);
+
 let fahrenheitTemperature = null;
 
 let celsiusLink = document.querySelector("#celsius-link");

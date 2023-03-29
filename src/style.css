@@ -3,9 +3,7 @@ body {
     no-repeat;
   background-size: cover;
 }
-h2 {
-  size: 80px;
-}
+
 .block-1,
 .block-2,
 .block-3 {
@@ -48,4 +46,15 @@ h2 {
 }
 footer {
   text-align: center;
+}
+.weather-forecast {
+  text-align: center;
+  margin: 0 auto;
+}
+.forecast-date {
+  font-size: 16px;
+  color: #34474e;
+}
+.temperature-minimums {
+  opacity: 0.75;
 }
