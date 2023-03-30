@@ -24,19 +24,20 @@
 
 <body>
     <section class="search-bar">
-        <form class="row g-3">
+        <form class="row g-3 search-now-form">
             <div class="col-auto">
                 <input type="search" class="form-control" id="search-engine" placeholder="What's the weather in...?"
                     value="">
             </div>
-            <div class="col-auto search-button">
+            <div class="col-auto">
                 <button type="button" class="btn btn-secondary" id="search-button">Search Now</button>
             </div>
-            <span class="col-auto search-button">
-                <button class="btn btn-secondary current-location-button"
-                    id="current-location-button">Current
-                    Location</button>
-            </span>
+        </form>
+        <form class="row g-3 current-location-button"> 
+            <div class="col-auto">
+                <button class="btn btn-secondary"
+                    id="current-location-button">Current Location</button>
+                </div>
         </form>
     </section>
 
@@ -64,7 +65,9 @@
         </div>
     </section>
 
+    <section class="block-3">
 <div class="weather-forecast" id="forecast"></div>
+    </section>
 
 <footer>
     <a href="https://github.com/nayelijnieto/simple-weather-app" target="_blank">Open-source code</a><span>by Nayeli Nieto</span>

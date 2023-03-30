@@ -45,8 +45,6 @@ function searchCity(event) {
   if (city) {
     let h1 = document.querySelector("h1");
     h1.innerHTML = `${city}`;
-  } else {
-    alert("What city's weather would you like to search?");
   }
   let apiKey = "a710bd8bd76400c9658ef649d9e81728";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
@@ -54,7 +52,7 @@ function searchCity(event) {
   axios.get(apiUrl).then(displayWeather);
 }
 
-let searchButton = document.querySelector("button");
+let searchButton = document.querySelector(".search-now-form");
 searchButton.addEventListener("click", searchCity);
 
 ///////above: Search City & Weather ////// below: display current location weather/////
@@ -95,7 +93,7 @@ function retrieveLocation(position) {
   axios.get(apiUrl).then(displayWeather);
   console.log(apiUrl);
 }
-
+navigator.geolocation.getCurrentPosition(retrieveLocation);
 //Unit Conversion // fahrenheit & celsius //
 function displayCelsiusTemperature(event) {
   event.preventDefault();
@@ -117,11 +115,13 @@ function displayForecast() {
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
-  forecastHTML =
-    forecastHTML +
-    `
+  let days = ["THU", "FRI", "SAT", "SUN", "MON", "TUE"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
         <div class="col-2">
-            <div class="forecast-date">THU</div>
+            <div class="forecast-date">${day}</div>
             <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/rain-day.png" width="50px"/>
             <div class="forecast-temperatures">
                 <span class="temperature-maximums">18°</span>
@@ -130,11 +130,11 @@ function displayForecast() {
             </div>
         </div>
 `;
+  });
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
-
-navigator.geolocation.getCurrentPosition(retrieveLocation);
+displayForecast();
 
 let locationButton = document.querySelector(".current-location-button");
 locationButton.addEventListener("click", retrieveLocation);
