@@ -8,7 +8,7 @@ body {
 .block-2,
 .block-3 {
   text-align: center;
-  border: 4px solid #297ca5d3;
+  border: 7px solid #4498c2a6;
   border-radius: 10px;
   max-width: 750px;
   margin: 0 auto;
@@ -17,25 +17,27 @@ body {
   background-color: #fcddc69a;
   opacity: 90%;
   font-family: "Chakra Petch", sans-serif;
-  color: #34474e;
-  margin-top: 20px;
+  color: #466f7ef3;
+  margin-top: 30px;
   margin-bottom: 20px;
+  border-style: double;
 }
 .block-2 {
   font-size: 18px;
 }
 .search-bar {
-  border: 4px solid #297ca5d3;
+  border: 7px solid #4498c2a6;
   border-radius: 10px;
   max-width: 750px;
   margin: 0 auto;
   display: block;
-  background-color: #fcddc69a;
+  background-color: #f8d1b58c;
   opacity: 90%;
   font-family: "Chakra Petch", sans-serif;
   margin-top: 20px;
   margin-bottom: 20px;
   padding: 15px;
+  border-style: double;
 }
 .description {
   text-transform: capitalize;

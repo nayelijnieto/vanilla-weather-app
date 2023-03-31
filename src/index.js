@@ -69,8 +69,8 @@ function displayWeather(response) {
   fahrenheitTemperature = Math.round(response.data.main.temp);
 
   h1.innerHTML = `${response.data.name}`;
-  h2.innerHTML = `${fahrenheitTemperature}°`;
-  humidity.innerHTML = `Humidity: ${response.data.main.humidity}`;
+  h2.innerHTML = `${fahrenheitTemperature}°F`;
+  humidity.innerHTML = `Humidity: ${response.data.main.humidity}%`;
   feelsLike.innerHTML = `Feels like: ${feelsLikeTemp}°`;
   windspeed.innerHTML = `Wind speed: ${windSpeed} mph`;
   description.innerHTML = `Description: ${response.data.weather[0].description}`;
@@ -93,24 +93,9 @@ function retrieveLocation(position) {
   console.log(apiUrl);
 }
 navigator.geolocation.getCurrentPosition(retrieveLocation);
-//Unit Conversion // fahrenheit & celsius //
-function displayCelsiusTemperature(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("h2");
 
-  celsiusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-  let celsiusTemperature = Math.round(((fahrenheitTemperature - 32) * 5) / 9);
-  temperatureElement.innerHTML = `${celsiusTemperature}°`;
-}
-function displayFahrenheitTemperature(event) {
-  event.preventDefault();
-  celsiusLink.classList.add("active");
-  fahrenheitLink.classList.remove("active");
-  let temperatureElement = document.querySelector("h2");
-  temperatureElement.innerHTML = `${fahrenheitTemperature}°`;
-}
 //Forecast Day Function//
+
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
   let day = date.getDay();
@@ -164,11 +149,3 @@ searchButton.addEventListener("click", searchCity);
 
 let locationButton = document.querySelector(".current-location-button");
 locationButton.addEventListener("click", retrieveLocation);
-
-let fahrenheitTemperature = null;
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", displayCelsiusTemperature);
-
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
